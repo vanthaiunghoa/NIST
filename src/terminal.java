@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.*;
 class terminal
 {
 	public static void main(String... args) throws IOException
@@ -17,7 +18,7 @@ class terminal
 		        }
 		        
 		        ProcessBuilder builder2 = new ProcessBuilder(
-			            "cmd.exe", "/c", "cd \"C:\\nbis_v5_0_0\\Rel_5.0.0\\mindtct\\bin\" &&  mindtct sample_image.wsq output2");
+			            "cmd.exe", "/c", "cd \"C:\\nbis_v5_0_0\\Rel_5.0.0\\mindtct\\bin\" &&  mindtct finger.wsq output2");
 			        builder2.redirectErrorStream(true);
 			        Process p2 = builder2.start();
 			        BufferedReader r2 = new BufferedReader(new InputStreamReader(p2.getInputStream()));
@@ -195,7 +196,7 @@ class terminal
 	    	}
     	
 		//-------------------------------------------------------------------	        
-			        
+			    System.out.print("Minuatea rate is ");   
 			      ProcessBuilder builder3 = new ProcessBuilder(
 				            "cmd.exe", "/c", "cd \"C:\\nbis_v5_0_0\\Rel_5.0.0\\bozorth3\\bin\" && bozorth3 output1.xyt output2.xyt");
 				        builder3.redirectErrorStream(true);
@@ -206,7 +207,15 @@ class terminal
 				            line3 = r3.readLine();
 				            if (line3 == null) { break; }
 				            System.out.println(line3);
+				            if(Integer.parseInt(line3) == 494)
+					        	System.out.println("Finger Print Matched");
+					        else if(Integer.parseInt(line3) == 0)
+					        	System.out.println("Finger Print Not Matched");
+					        else
+					        	System.out.println("Finger Print Partially Matched");
 				        }
+				        
+				        	
            
 }       
 		
