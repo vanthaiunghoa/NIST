@@ -1,4 +1,5 @@
 NATIONAL INSTITUTE OF STANDARD AND TECHNOLOGY
+------------------------------------------------
 This is a NIST program
 Having 2 algo MINDTCT and BOZORTH3
 
