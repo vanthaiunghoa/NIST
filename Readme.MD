@@ -42,6 +42,6 @@ The command, mindtct, reads a fingerprint image from an ANSI/NIST, WSQ, baseline
 Mindtct outputs the minutiae identification based on the ANSI/NIST standard or the M1 (ANSI INCITS 378-2004) representation. 
 
 
-![myimage-alt-tag](https://www.google.co.in/search?q=fingerprint+minutiae&espv=2&biw=1366&bih=667&source=lnms&tbm=isch&sa=X&ved=0ahUKEwja4YbnjJPOAhXHJiYKHf9VCNsQ_AUIBigB&dpr=1#imgrc=s3ImynYheIqaEM%3A)
+[[ http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif | height = 100px ]]
 
 
