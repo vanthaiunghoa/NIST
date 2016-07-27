@@ -44,4 +44,16 @@ Mindtct outputs the minutiae identification based on the ANSI/NIST standard or t
 
 [[ http://www.sheawong.com/wp-content/uploads/2013/08/keephatin.gif | height = 100px ]]
 
+Minutiae Matching (BOZORTH3)
+-------------------------------
+The BOZORTH3 matcher uses only the location (x,y) and orientation (theta) of the minutia points to match the fingerprints. 
+The matcher builds separate tables for the fingerprints being matched that define distance and orientation between minutia in each fingerprint. 
+These two tables are then compared for compatibility and a new table is constructed that stores information showing the inter-fingerprint compatibility. 
+The inter-finger compatibility table is used to create a match score by looking at the size and number of compatible minutia clusters.
+
+Two key things are important to note regarding this fingerprint matcher:
+1. Minutia features are exclusively used and limited to location (x,y) and orientation ‘t’, represented as {x,y,t}.
+2. The algorithm is designed to be rotation and translation invariant.
+
+
 
