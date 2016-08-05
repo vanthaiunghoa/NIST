@@ -1,0 +1,2 @@
+ cjpegb - Takes an IHead or raw image pixmap and encodes it using
+        Baseline (Lossy) JPEG, writing the compressed data to file.

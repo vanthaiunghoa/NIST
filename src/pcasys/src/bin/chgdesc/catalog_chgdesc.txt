@@ -1,0 +1,3 @@
+ chgdesc - Given a PCASYS data file this command replaces its
+           description.  The program makes a temporary copy of
+           the file.

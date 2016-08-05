@@ -1,0 +1,6 @@
+ dwsq - Takes a WSQ compressed image file and decodes it,
+        reconstructing a "lossy" pixmap and saving it to
+        an IHead or raw image file.
+        This is an implementation based on the Crinimal Justice
+        Information Services (CJIS) document "WSQ Gray-scale
+        Fingerprint Compression Specification", Dec. 1997.

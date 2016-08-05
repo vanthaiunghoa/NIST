@@ -1,0 +1,3 @@
+ optrwsgw - Optimizes the regional weights that are then applied
+            to the eigen vectors. Used to run optimization
+            on several processors at onetime.

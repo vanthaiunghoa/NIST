@@ -1,0 +1,75 @@
+ allocfet - allocates and initialized an empty fet structure.
+            Exits on error.
+ allocfet_ret - allocates and initialized an empty fet structure.
+            Returns on error.
+ reallocfet - reallocates an fet structure of a
+            specified length.  Exits on error.
+ reallocfet_ret - reallocates an fet structure of a
+            specified length.  Returns on error.
+ deletefet - removes the specified feature entry from an fet structure.
+             Exits on error.
+ deletefet_ret - removes the specified feature entry from an fet
+             structure.  Returns on error.
+ extractfet - returns the specified feature entry from an fet structure.
+              Exits on error.
+ extractfet_ret - returns the specified feature entry from an fet
+              structure.  Returns on error.
+ freefet - deallocates the memory for an fet structure.
+
+ lookupfet - returns the specified feature entry from an fet
+             structure.  Returns TRUE if found, FALSE if not.
+ combine_nistcom - takes an initialized FET NISTCOM structure
+             or allocates one if necessary, and updates the
+             structure with general image attributes.
+ combine_jpegl_nistcom - takes an initialized FET NISTCOM structure
+             or allocates one if necessary, and updates the
+             structure with JPEGL-specific image attributes.
+ combine_wsq_nistcom - takes an initialized FET NISTCOM structure
+             or allocates one if necessary, and updates the
+             structure with WSQ-specific image attributes.
+ combine_jpegb_nistcom - takes an initialized FET NISTCOM structure
+             or allocates one if necessary, and updates the
+             structure with JPEGB-specific image attributes.
+ del_jpegl_nistcom - takes an initialized FET NISTCOM structure
+             and removes JPEGL compression attributes.
+ del_wsq_nistcom - takes an initialized FET NISTCOM structure
+             and removes WSQ compression attributes.
+ del_jpegb_nistcom - takes an initialized FET NISTCOM structure
+             and removes JPEGB compression attributes.
+ sd_ihead_to_nistcom - takes an IHead header from a specified NIST
+             Special Database file, and parses specific attribute data
+             from the header into an FET NISTCOM structure.
+ sd4_ihead_to_nistcom - takes an IHead header from a NIST Special
+             Database 4 file, and parses specific attribute data
+             from the header into an FET NISTCOM structure.
+ sd9_10_14_ihead_to_nistcom - takes an IHead header from a NIST Special
+             Database 9,10,14 file, and parses specific attribute data
+             from the header into an FET NISTCOM structure.
+ sd18_ihead_to_nistcom - takes an IHead header from a NIST Special
+             Database 18 file, and parses specific attribute data
+             from the header into an FET NISTCOM structure.
+ get_sd_class - gets the class from a special database id field
+
+ get_class_from_ncic_class_string - gets the class from a special
+             database ncic class string
+ printfet - dumps the contents of an fet structure to the specified
+            open file pointer.
+ readfetfile - opens an fet file and reads its contents into an
+               fet structure.  Exits on error.
+ readfetfile_ret - opens an fet file and reads its contents into an
+               fet structure.  Returns on error.
+ fet2string - takes an FET structure and concatenates (name,value)
+              pairs into a single null-terminated string with each
+              (name,value) pair delimited by a new-line.
+ string2fet - parses a null-terminated string representing a
+              list of (name,value) pairs into an FET structure.
+ updatefet - replaces a feature entry in an fet structure, or creates
+             a new entry if the feature does not already exist.
+             Exits on error.
+ updatefet_ret - replaces a feature entry in an fet structure, or
+             creates a new entry if the feature does not already exist.
+             Returns on error.
+ writefetfile - write the contents of an fet structure to the
+                specified file.  Exits on error.
+ writefetfile_ret - write the contents of an fet structure to the
+                specified file.  Returns on error.

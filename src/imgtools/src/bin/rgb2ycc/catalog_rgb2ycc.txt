@@ -1,0 +1,3 @@
+ rgb2ycc - Takes an IHead or raw RGB pixmap and converts its
+           pixels components to the YCbCr colorspace.  If specified,
+           this program will downsample the output component planes.

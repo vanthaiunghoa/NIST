@@ -1,0 +1,3 @@
+ rwpics - Converts regional weight data to an image. Three modes
+          convert the regional weights, basepoints, or the
+          estimated gradients at the basepoints.

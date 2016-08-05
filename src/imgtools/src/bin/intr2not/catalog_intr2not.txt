@@ -1,0 +1,5 @@
+ intr2not - Takes an IHead or raw pixmap with interleaved color
+            components.  It de-interleaves the pixmap creating
+            one 8-bit image plane for each color component.  This
+            can handle specific downsamplings of component planes
+            that are commonly used with YCbCr colorspace images.

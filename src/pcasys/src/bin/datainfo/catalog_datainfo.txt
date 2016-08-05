@@ -1,0 +1,2 @@
+ datainfo - Dumps the "header" information for the PCASYS
+            data file.

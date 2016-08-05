@@ -1,0 +1,4 @@
+ bozorth3 - Compares two fingerprint minutiae (x,y,theta) templates
+            and returns a score that can be used to decide if the
+            fingerprints are from the same person. It is rotation
+            and translation invariant.

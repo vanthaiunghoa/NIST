@@ -1,0 +1,123 @@
+ combine - Combines the outputs of the Neural Network (NN) and
+           the pseudoridge tracer (whorl detector).
+ eigen - Finds eigenvalues and eigenvectors of a symmetric
+         real matrix and removes any that fail to converge.
+ diag_mat_eigen - Finds eigenvalues and eigenvectors of a symmetric
+                  real matrix.
+ enhnc - Enhances the segmented fingerprint raster.
+ gr_cm - Returns a gray colormap of the specified depth.
+ 
+ set_gray_colormap - Set the colormap intensities to be gray.
+ 
+ grphcs_init - Initializes the grphics mode screens.
+ grphcs_startwindow - Creates a window whose top-left corner is at
+                      (x,0), of width w by height h.
+ grphcs_origras - Displays a fingerprint image
+ grphcs_segras - Displays a segmented fingerprint image.
+ grphcs_enhnc_outsquare - Updates a piece of the enhanced image.
+ grphcs_enhnc_sleep - Sleeps based on the sleeps.enhnc time.
+ grphcs_foundconup_sleep - Sleeps based on the sleeps.foundconup time.
+ grphcs_noconup_sleep - Sleeps based on the sleeps.noconup time.
+ grphcs_bars - Displays the orientation bars.
+ grphcs_xy_to_dmt - Converts orientation vector to an angle in degrees
+                    and a magnitude, and finds the top magnitude.
+ grphcs_dmt_to_bars - Converts an array of angles and magnitudes
+                      to an image.
+ grphcs_core_medcore - Displays a plus sign for core location found
+                       by r92 and displays a plus sign surrounded by
+                       square for the median core location.
+ grphcs_normacs - Displays the NN activations as a bar graph.
+ letter_adjust_xy - Adjust the (ALRSTW) Class letter x,y locations.
+ grphcs_sgmntwork_init - Initializes the segmentor-work window to
+                         the 7 images showing the stages of segmentation.
+ grphcs_sgmntwork_fg - Stores provided foreground image in
+                       the segmentor-work window.
+ grphcs_sgmntwork_edge - Stores the provided edge information
+                         in the segmentor-work window.
+ grphcs_sgmntwork_lines - Stores the straight lines the segmentor
+                          fit to the foreground-edges in the
+                          segmentor-work window.
+ grphcs_sgmntwork_box - Stores, in the segmentor-work window, the box
+                        showing the region of the foreground that will
+                        be segmented.
+ grphcs_sgmntwork_finish - Displays the segmentor-work picture in its
+                           window, to the right of the fingerprint
+                           window.
+ grphcs_pseudo_cfgyow - Displays foreground image on which pseudo-
+                        ridges will be displayed.
+ grphcs_pseudo_cfgyow_reput - Rereshes the screen when drawing
+                              pseudoridges.
+ grphcs_pseudo_pseudoridge - Displays a pseudoridge or the final
+                             concave-upward lobe if found.
+ grphcs_titlepage - Displays the title page.
+ grphcs_featvec - Displays a bar graph of the feature vectors.
+ grphcs_lastdisp - Displays the the actual class, found class
+                   the confidence.
+ ImageBit8ToBit24Unit32 - Converts from 8 bit colormap to 24 bit
+                          colormap (True Color).
+ xcreateimage - converts to True Color image before displaying
+                if using a True Color Map.
+ mkoas_init - Initialization for mkoas command, which makes and stores
+              orientation arrays from a set of fingerprints.
+ mkoas_readparms - Reads a file containing parms for mkoas.
+ mkoas_check_parms_allset - Checks that every mkoas parm has been set.
+ pcasys_init - Initialization for demo commands pcasys and pcasysx.
+ pcasys_readparms - Reads a file containing parms for pcasys.
+ check_cls_str - Check for valid class strings.
+ mlp_single - Computes the error value resulting from sending the
+              patterns through the MLP.  Also can compute the gradient
+              of the error w.r.t. the weights, and can do various other
+              computations and writings.
+ pnn - A simple implementation of Specht's Probabilistic Neural Net
+       classifier.  Produces normalized activations, hypothetical
+       class, and confidence.
+ pseudo - Traces pseudoridges, searching for a concave-upward shape
+ print_has_conup - Produces a pseudoridge by approximately traveling
+                   along the ridge flow.
+ path_has_conup - Tests a pseudoridge path to find out whether it
+                  has a conup shape.
+ lobe_is_conup - Tests a lobe (maximal constant-turn-polarity subsequence
+                 of a path) to find out whether it is a conup.
+ pseudo_avrors2_smooth_iter - Performs an interation of smoothing on the
+                              finely-spaced orientation array.
+ pseudo_avrors2_xys2has - Transforms orientations from (x,y) pairs to
+                          degrees.
+ r92 - Wegstein's R92 registration algorithm.  Given an array of ridge
+       angles, this routine finds the core, or a core-like feature,
+       of the fingerprint.
+ build_k_table - (Internal to r92)
+ compute_arch_core - (Internal to r92)
+ compute_core - (Internal to r92)
+ compute_non_arch_core - (Internal to r92)
+ is_it_a_core - (Internal to r92)
+ ridge_dir_stats - (Internal to r92)
+ score_arch - (Internal to r92)
+ set_index - (Internal to r92)
+ r92a - Converts orientation vectors to angles for r92, transposing and
+        padding to 32x32, and then calls r92 to find the core.
+ readfing - Read and display fingerprint image data.
+ results - Writes classification system results for a test print to
+           output file and if verbose to stdout.
+ rors - extracts pixelwise orientations, and averages squares of them
+        to make an array of local average orientations.
+ rgar - re-averages pixelwise orientations with registration-shifted
+        squares, thereby making the registered orientation array.
+ ar2 - averages pixelwise orientations with overlapping squares, for
+        a more finely spaced array of local average orientations
+        (not registered) which will be used by the pseudoridge
+        tracer (pseudo).
+ sgmnt - Segments a sw X sh window from the original raster.
+ sgmnt_make_fg - Makes a down-sampled foreground of the original raster.
+ sgmnt_ebfc - Cleans up a foreground image.
+ sgmnt_edges - Finds the left, top, and right edges of the "cleaned"
+               foreground image.
+ scan_row_from_left_foundtrue - Scans a row of foreground from left,
+                                trying to find a true pixel
+ scan_row_from_right_foundtrue - Scans a row of foregrround from right,
+                                 trying to find a true pixel
+ scan_col_from_top_foundtrue - Scans a column of foreground from top,
+                               trying to find a true pixel
+ sgmnt_decide_location - Decides exact location to segment fingerprint.
+ sgmnt_snip_interp - Segments image using interpolation (slow).
+ sgmnt_snip - Segments image rounding off pixel locations.
+ trnsfrm - Applies a linear transform to the registered orientation array.

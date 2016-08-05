@@ -1,0 +1,7 @@
+ mindtct - Uses Version 2 of the NIST Latent Fingerprint System (LFS)
+           to detect minutiae and count ridges in a grayscale image.
+           This version of the program will process
+           ANSI/NIST, WSQ, JPEGB, JPEGL, and IHead image formats.
+           Results are written to various output files with
+           predefined extensions appeneded to a specified output
+           root path.

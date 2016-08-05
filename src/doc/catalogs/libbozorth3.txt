@@ -1,0 +1,69 @@
+ bz_comp -  takes a set of minutiae (probe or gallery) and
+            compares/measures  each minutia's {x,y,t} with every
+            other minutia's {x,y,t} in the set creating a table
+            of pairwise comparison entries
+ bz_find -  trims sorted table of pairwise minutia comparisons to
+            a max distance of 75^2
+ bz_match - takes the two pairwise minutia comparison tables (a probe
+            table and a gallery table) and compiles a list of
+            all relatively "compatible" entries between the two
+            tables generating a match table
+ bz_match_score - takes a match table and traverses it looking for
+            a sufficiently long path (or a cluster of compatible paths)
+            of "linked" match table entries
+            the accumulation of which results in a match "score"
+ bz_sift -  main routine handling the path linking and match table
+            traversal
+ bz_final_loop - (declared static) a final postprocess after
+            the main match table traversal which looks to combine
+            clusters of compatible paths
+ malloc_or_exit - allocates a buffer of bytes from the heap of
+        specified length exiting directly upon system error
+ malloc_or_return_error - allocates a buffer of bytes from the heap
+        of specified length returning an error code upon system error
+ bozorth_probe_init -   creates the pairwise minutia comparison
+                        table for the probe fingerprint
+ bozorth_gallery_init - creates the pairwise minutia comparison
+                        table for the gallery fingerprint
+ bozorth_to_gallery -   supports the matching scenario where the
+                        same probe fingerprint is matches repeatedly
+                        to multiple gallery fingerprints as in
+                        identification mode
+ bozorth_main -         supports the matching scenario where a
+                        single probe fingerprint is to be matched
+                        to a single gallery fingerprint as in
+                        verificaiton mode
+ parse_line_range - parses strings of the form #-# into the upper
+            and lower bounds of a range corresponding to lines in
+            an input file list
+ set_progname - stores the program name for the current invocation
+ set_probe_filename - stores the name of the current probe file
+            being processed
+ set_gallery_filename - stores the name of the current gallery file
+            being processed
+ get_progname - retrieves the program name for the current invocation
+ get_probe_filename - retrieves the name of the current probe file
+            being processed
+ get_gallery_filename - retrieves the name of the current gallery
+            file being processed
+ get_next_file - gets the next probe (or gallery) filename to be
+            processed, either from the command line or from a
+            file list
+ get_score_filename - returns the filename to which the output line
+            should be written
+ get_score_line - formats output lines based on command line options
+            specified
+ bz_load -  loads the contents of the specified XYT file into
+            structured memory
+ fd_readable - when multiple bozorth processes are being run
+            concurrently and one of the processes determines a
+            has been found, the other processes poll a file
+            descriptor using this function to see if they
+            should exit as well
+ sort_quality_decreasing - comparison function passed to stdlib
+            qsort() used to sort minutia qualities
+ sort_x_y - comparison function passed to stdlib qsort() used
+            to sort minutia coordinates increasing first on x
+            then on y
+ sort_order_decreasing - calls a custom quicksort that sorts
+            a list of integers in decreasing order

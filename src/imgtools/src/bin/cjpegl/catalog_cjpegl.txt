@@ -1,0 +1,2 @@
+ cjpegl - Takes an IHead or raw image pixmap and encodes it using
+        Lossless JPEG (JPEGL), writing the compressed data to file.

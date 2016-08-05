@@ -1,0 +1,2 @@
+ dlwsqcom - takes a WSQ compressed image file and deletes all
+            comments in the file.

@@ -1,0 +1,9 @@
+ djpeglsd - Takes an IHead formatted, JPEGL compressed, image file,
+            such as those distributed with NIST Special Databases
+            {4,9,10,18} and decodes it, reconstructing a "lossless"
+            pixmap and saving it to an IHead or raw image file.
+            If the input file is from a NIST Special Database, then
+            image attributes are stored as a separate NISTCOM text file.
+            This program should be used to convert legacy data only.
+            The format of the files processed by this program should
+            be considered obsolete.

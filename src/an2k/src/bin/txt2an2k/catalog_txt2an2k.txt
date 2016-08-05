@@ -1,0 +1,3 @@
+ txt2an2k - Parses a textually formatted version of an ANSI/NIST
+            2007 file and writes its contents to new file in the
+            standard compliant format.

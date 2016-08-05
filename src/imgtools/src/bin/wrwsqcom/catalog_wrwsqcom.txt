@@ -1,0 +1,2 @@
+ wrwsqcom - takes a WSQ compressed image file and inserts a
+            comment in the file at the end of all other comments.

@@ -1,0 +1,7 @@
+ dwsq14 - Takes an IHead formatted, WSQ compressed, image file,
+        such as those used in the distribution of legacy data on
+        NIST Special Database 14 and decodes it, reconstructing a
+        "lossy" pixmap and saving it to an IHead or raw image file.
+        This program should be used to convert legacy data only.
+        The format of the files processed by this program should
+        be considered obsolete.

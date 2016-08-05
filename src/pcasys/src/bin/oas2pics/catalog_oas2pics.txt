@@ -1,0 +1,2 @@
+ oas2pics - Converts orientation arrays into gray/binary
+            (ie. 0|255) IHEAD raster images.

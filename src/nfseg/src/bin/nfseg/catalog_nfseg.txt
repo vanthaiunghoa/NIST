@@ -1,0 +1,9 @@
+ nfseg - Takes a single finger or 4 finger plain impression,
+         grayscale fingerprint image and segments the fingerprint(s)
+         into individual image files. This program will automatically
+         process
+ parse_num_arg - Parse a positive integer command line argument value.
+ check_tristate_value - Check a value that should be either 
+              UNSET (-1), TRUE (1), or FALSE (0).
+ procargs - Process command line arguments, setting various
+              static variables with file scope as appropriate.

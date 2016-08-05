@@ -1,0 +1,3 @@
+ mktran - Makes a transform matrix Psi^t * W, where Psi's columns
+          are the first n_eigvecs_use eigenvectors from eigvecs_file
+          and W is the diagonal matrix of the weights from regwts_file.

@@ -1,0 +1,5 @@
+ iaf2an2k  - Takes an ANSI/NIST 2007 file, and converts
+             any Type-9 records with FBI/IAFIS fields populated to
+             Type-9's with NIST fields populated.  Where possible, it
+             also converts binary field image records into tagged
+             field records.

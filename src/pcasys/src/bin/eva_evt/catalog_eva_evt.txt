@@ -1,0 +1,2 @@
+ eva_evt - Computes the eigen values and vectors of
+           a covariance matrix.

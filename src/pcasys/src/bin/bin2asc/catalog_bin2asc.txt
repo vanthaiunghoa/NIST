@@ -1,0 +1,2 @@
+ bin2asc - Reads a PCASYS binary data file of any type and
+           writes a corresponding ascii data file.

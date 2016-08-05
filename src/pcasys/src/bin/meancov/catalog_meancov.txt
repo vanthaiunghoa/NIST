@@ -1,0 +1,2 @@
+ meancov - Computes the mean vector and covariance matrix
+           for a set of feature vectors.

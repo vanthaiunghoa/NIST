@@ -1,0 +1,76 @@
+ read_and_decode_pcasys - identifies and reconstructs a
+          potentially compressed datastream of image pixels 
+          for use by PCASYS.
+ get_nistcom_class - Gets a fingerprint class from a NISTCOM
+          structure.
+ get_sd_ihead_class - Gets a fingerprint class from a Special
+          Database IHEAD structure.
+ get_class_id - Gets the class ID # relative to a class string.
+ classes_write_ind - Writes a buffer of classes as a file.
+ classes_read_n - Finds the number of entries in a classes file.
+ classes_read_ind - Reads a class file containing class indices.
+ classes_read_vec - Reads a class file containing class vectors.
+ classes_read_ncls - Finds number of classes in class file.
+ classes_read_pindex - Determines if class file contains indices
+                       or vectors (floats) to define class of
+                       each print.
+ classes_read_subvector_ind - Reads a subset of a class file
+                              containing class indices.
+ number_classes - Determines the number of unique classes in
+                  set of class indices.
+ matrix_writerow_init - An initialization routine, called once
+                        before multiple calls of matrix_writerow.
+ matrix_writerow - Writes one row to a matrix file.
+ matrix_write -  Writes a matrix of floats as a file.
+ matrix_readrow_init - An initialization routine, called once
+                       before multiple calls of matrix_readrow.
+ matrix_readrow - Reads one row of a matrix file.
+ matrix_read_dims - Returns the dimensions of the matrix.
+ matrix_read - Reads a matrix file of floats.
+ matrix_read_submatrix - Reads a submatrix of the matrix file.
+ covariance_write - Writes a covariance buffer to a file.
+ covariance_read_order_nvecs - Reads the order, and no. of vectors
+                               used, of a covariance file.
+ covariance_read - Reads a covariance file into a buffer.  The buffer
+                   contains the nonstrict lower triangle of the
+                   covariance matrix only, in row-major order.
+ covariance_read_old - Reads a covariance file into a buffer.
+                       Allocates the buffer to the size needed to
+                       contain the full matrix, then loads the data
+                       into the nonstrict upper triangle.
+ creat_ch - tries to creat a file
+ dptr2ptr_uchar - converts [][] into *
+ erode - erodes a raster
+ exists - finds out whether a file exists
+ fopen_ch - tries to fopen a file
+ fopen_noclobber - tries to fopen a file for writing, unless it exists
+ get_datadir - tries to find the pcasys data directory
+ isverbose - finds out whether the verbosity is on
+ lastcomp - finds last component of a pathname
+ linecount - counts the lines in a file
+ linreg - linear regression
+ malloc_ch - tries to malloc a buffer
+ open_read_ch - tries to open a file for reading
+ rcfill - fills holes in the rows and cols of a raster
+ rsblobs - removes small blobs from a raster
+ setverbose - sets the verbosity
+ sleepity - sleep, or wait for user to hit return key
+ summary - computes and writes summary info for a test run
+ tilde_filename - changes ~/string to home-dir/string
+ usage_func - for use by the "usage" macro
+ Usage_func - for use by the "Usage" macro
+ write_ihdr_std - writes ihdr file with many "standard" fields
+ rws_to_acerror - activation error as a function of regional weights.
+ make_tranmat - (called by rws_to_acerror.)
+ diag_to_tranmat - (called by make_tranmat.)
+ transform_featvecs - (called by rws_to_acerror.)
+ optrws_pnn_acerror - runs PNN on feature vectors, computing
+                      error rate.
+ swap_float_bytes_vec_cpy - Allocates a new float vector and copies
+            the data into it with the byte order swapped.
+ swap_float_bytes_vec - Swaps the byte order for a vector of floats.
+ table_init - allocates a TABLE that can hold a specified no. of pairs.
+ table_store - stores a pair in the table.
+ table_lookup - looks up a float against the first elts of the pairs.
+ table_clear - sets the number stored back to zero, in effect clearing
+               the table.

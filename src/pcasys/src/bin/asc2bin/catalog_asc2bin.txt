@@ -1,0 +1,2 @@
+ asc2bin - Reads a PCASYS ascii data file of any type and
+           writes a corresponding binary data file.

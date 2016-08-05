@@ -1,0 +1,50 @@
+ rdimgwh - Reads an image or images from an old style image file
+              or an ANSI/NIST file, and prints the width and
+              height from the information embedded in the image
+              data.  This should be the same as the width and
+              height specified in any metadata associated with
+              the image; there is an option to check this in AN2K
+              files.  For non ANSI/NIST files, only the beginning
+              of the file is read, and in either case only about
+              enough is parsed to find the required width and
+              height data.
+ get_wsq_wh - This routine does some of what wsq_decode_mem() in
+              imgtools/src/lib/wsq/decoder.c does, but only about
+              as much as necessary to get the image width and
+              height.
+ get_jpegl_wh - This routine does some of what jpegl_decode_mem()
+              in imgtools/src/lib/jpegl/decoder.c does, but only
+              about as much as necessary to get the image width
+              and height. (Neither this function, nor
+              jpegl_decode_mem() appear to be able to handle all
+              possible jpegl files, but they do handle all the
+              jpegl files that the NBIS code creates.)
+ get_jpegb_wh - This routine does some of what jpegb_decode_mem()
+              in imgtools/src/lib/ijg/src/lib/jpegb/decoder.c
+              does, but only about as much as necessary to get
+              the image width and height.
+ get_ihead_wh_file - Gets the width and height of an IHEAD by reading 
+              the values out of an IHEAD struct.
+ get_jp2_wh_stream - Return the size of a jp2 format image
+              accessed through a JasPer stream.  This function
+              provides the core functionality for the other two
+              "get_jp2_wh" functions, which each create the
+              required kind of JasPer stream before calling it.
+ get_jp2_wh - Return the size of a jp2 format image in a buffer.
+ get_jp2_wh_file - Return the size of a jp2 image in a file.
+              
+ get_png_wh_file - Open a PNG file and read enough to find the
+              image width and height.
+ get_png_wh - Parse a PNG file in memory and find the image width
+              and height.
+ get_wh - It would be easy get the width and height by calling
+              read_and_decode_image() instead of using all the
+              code below, but it would read and decode the entire
+              image, which is way more I/O and computing than
+              necessary, since the width and height are typically
+              found in the image header.
+ get_wh_from_file - Opens and reads in the beginning of an image
+              file, so that the file data in memory can be passed
+              to get_wh().  This approach works for the old-style
+              single-image files but not for AN2K files, which
+              may contain multiple images.

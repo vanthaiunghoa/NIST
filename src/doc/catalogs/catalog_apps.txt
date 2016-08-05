@@ -1,0 +1,224 @@
+ an2k2iaf - Takes an ANSI/NIST 2007 file, and converts
+            any Type-9 records with NIST fields populated to Type-9's
+            with FBI/IAFIS fields populated.  Where possible, it
+            also converts tagged field image records into binary
+            field records.
+ an2k2txt - Parses an ANSI/NIST 2007 file and writes
+            its contents to new file in a textually viewable and
+            editable format.  Binary image fields are stored to
+            temporary files and externally referenced in the
+            output file.
+ an2ktool - Parses an ANSI/NIST 2007 file, manipulates
+            its contents, and writes the results back out to file.
+            Operations may be conducted at the logical record, field
+            subfield, or information item.  Possible Operations include
+            printing, deleting, substituting, or inserting data.
+ autocrop - Parses an ANSI/NIST 2000 file, cropping any
+           Type-14 WSQ records at the included box using CropCoeff.
+           Saves new WSQ to a derived filename.
+ chkfile - Parses the text file of an ANSI/NIST 2007 file that is
+ histogen - Parses the text file of an ANSI/NIST 2007 file that is
+ iaf2an2k  - Takes an ANSI/NIST 2007 file, and converts
+             any Type-9 records with FBI/IAFIS fields populated to
+             Type-9's with NIST fields populated.  Where possible, it
+             also converts binary field image records into tagged
+             field records.
+ txt2an2k - Parses a textually formatted version of an ANSI/NIST
+            2007 file and writes its contents to new file in the
+            standard compliant format.
+ bozorth3 - Compares two fingerprint minutiae (x,y,theta) templates
+            and returns a score that can be used to decide if the
+            fingerprints are from the same person. It is rotation
+            and translation invariant.
+ cjpegb - Takes an IHead or raw image pixmap and encodes it using
+        Baseline (Lossy) JPEG, writing the compressed data to file.
+ cjpegl - Takes an IHead or raw image pixmap and encodes it using
+        Lossless JPEG (JPEGL), writing the compressed data to file.
+ cwsq - Takes an IHead or raw image pixmap and encodes it using WSQ.
+        This is an implementation based on the Crinimal Justice
+        Information Services (CJIS) document "WSQ Gray-scale
+        Fingerprint Compression Specification", Dec. 1997.
+ diff_bytes - Compares two input files byte by byte and returns
+              a histogram of the gray level differences.
+ djpegb - Takes a Baseline (Lossy) JPEG compressed image file and
+          decodes it to an IHead or raw image file.
+ djpegl - Takes a Lossless JPEG (JPEGL) compressed image file and
+          decodes it to an IHead or raw image file.
+ djpeglsd - Takes an IHead formatted, JPEGL compressed, image file,
+            such as those distributed with NIST Special Databases
+            {4,9,10,18} and decodes it, reconstructing a "lossless"
+            pixmap and saving it to an IHead or raw image file.
+            If the input file is from a NIST Special Database, then
+            image attributes are stored as a separate NISTCOM text file.
+            This program should be used to convert legacy data only.
+            The format of the files processed by this program should
+            be considered obsolete.
+ dlwsqcom - takes a WSQ compressed image file and deletes all
+            comments in the file.
+ dwsq - Takes a WSQ compressed image file and decodes it,
+        reconstructing a "lossy" pixmap and saving it to
+        an IHead or raw image file.
+        This is an implementation based on the Crinimal Justice
+        Information Services (CJIS) document "WSQ Gray-scale
+        Fingerprint Compression Specification", Dec. 1997.
+ dwsq14 - Takes an IHead formatted, WSQ compressed, image file,
+        such as those used in the distribution of legacy data on
+        NIST Special Database 14 and decodes it, reconstructing a
+        "lossy" pixmap and saving it to an IHead or raw image file.
+        This program should be used to convert legacy data only.
+        The format of the files processed by this program should
+        be considered obsolete.
+ intr2not - Takes an IHead or raw pixmap with interleaved color
+            components.  It de-interleaves the pixmap creating
+            one 8-bit image plane for each color component.  This
+            can handle specific downsamplings of component planes
+            that are commonly used with YCbCr colorspace images.
+ not2intr - Takes an IHead or raw pixmap with non-interleaved color
+            components.  It interleaves the pixel color components
+            into a single 24-bit plane.  This can handle specific
+            downsamplings of component planes that are commonly used
+            with YCbCr colorspace images.
+ rdimgwh - Reads an image or images from an old style image file
+              or an ANSI/NIST file, and prints the width and
+              height from the information embedded in the image
+              data.  This should be the same as the width and
+              height specified in any metadata associated with
+              the image; there is an option to check this in AN2K
+              files.  For non ANSI/NIST files, only the beginning
+              of the file is read, and in either case only about
+              enough is parsed to find the required width and
+              height data.
+ get_wsq_wh - This routine does some of what wsq_decode_mem() in
+              imgtools/src/lib/wsq/decoder.c does, but only about
+              as much as necessary to get the image width and
+              height.
+ get_jpegl_wh - This routine does some of what jpegl_decode_mem()
+              in imgtools/src/lib/jpegl/decoder.c does, but only
+              about as much as necessary to get the image width
+              and height. (Neither this function, nor
+              jpegl_decode_mem() appear to be able to handle all
+              possible jpegl files, but they do handle all the
+              jpegl files that the NBIS code creates.)
+ get_jpegb_wh - This routine does some of what jpegb_decode_mem()
+              in imgtools/src/lib/ijg/src/lib/jpegb/decoder.c
+              does, but only about as much as necessary to get
+              the image width and height.
+ get_ihead_wh_file - Gets the width and height of an IHEAD by reading 
+              the values out of an IHEAD struct.
+ get_jp2_wh_stream - Return the size of a jp2 format image
+              accessed through a JasPer stream.  This function
+              provides the core functionality for the other two
+              "get_jp2_wh" functions, which each create the
+              required kind of JasPer stream before calling it.
+ get_jp2_wh - Return the size of a jp2 format image in a buffer.
+ get_jp2_wh_file - Return the size of a jp2 image in a file.
+              
+ get_png_wh_file - Open a PNG file and read enough to find the
+              image width and height.
+ get_png_wh - Parse a PNG file in memory and find the image width
+              and height.
+ get_wh - It would be easy get the width and height by calling
+              read_and_decode_image() instead of using all the
+              code below, but it would read and decode the entire
+              image, which is way more I/O and computing than
+              necessary, since the width and height are typically
+              found in the image header.
+ get_wh_from_file - Opens and reads in the beginning of an image
+              file, so that the file data in memory can be passed
+              to get_wh().  This approach works for the old-style
+              single-image files but not for AN2K files, which
+              may contain multiple images.
+ rdwsqcom - Takes a WSQ compressed image file and prints all
+            comments in the file to standard output.
+ rgb2ycc - Takes an IHead or raw RGB pixmap and converts its
+           pixels components to the YCbCr colorspace.  If specified,
+           this program will downsample the output component planes.
+ sd_rfmt - Takes an IHead encapsulated image file from the NIST
+           archive of fingerprint and mugshot NIST Special Databases
+           {4,9,10,14,&18}.  The file is converted into a
+           "standardized" JPEGL or WSQ format.  Attribute data
+           stored in the input IHead header is reformatted and
+           stored in a comment block in the output file.
+           This program should be used to convert legacy data only.
+           The format of the files processed by this program should
+           be considered obsolete.
+ wrwsqcom - takes a WSQ compressed image file and inserts a
+            comment in the file at the end of all other comments.
+ ycc2rgb - Takes a raw YCbCr pixmap and converts its pixels components
+           to the RGB colorspace.  This program can handle the specific
+           downsampling of comonent planes.
+ mindtct - Uses Version 2 of the NIST Latent Fingerprint System (LFS)
+           to detect minutiae and count ridges in a grayscale image.
+           This version of the program will process
+           ANSI/NIST, WSQ, JPEGB, JPEGL, and IHead image formats.
+           Results are written to various output files with
+           predefined extensions appeneded to a specified output
+           root path.
+ nfseg - Takes a single finger or 4 finger plain impression,
+         grayscale fingerprint image and segments the fingerprint(s)
+         into individual image files. This program will automatically
+         process
+ parse_num_arg - Parse a positive integer command line argument value.
+ check_tristate_value - Check a value that should be either 
+              UNSET (-1), TRUE (1), or FALSE (0).
+ procargs - Process command line arguments, setting various
+              static variables with file scope as appropriate.
+ fing2pat - Takes a list of grayscale fingerprint images, and for
+            each image, computes a feature vector for use by the
+            NFIQ algorithm for MLP training.  If the optional file
+            is passed using the "-z" flag, then the output feature
+            vectors are ZNormalized.
+ nfiq - Takes a grayscale fingerprint image and computes an
+        image quality value based on the NFIQ algorithm.
+        This program will automatically process
+        ANSI/NIST, WSQ, JPEGB, JPEGL, IHead and raw image formats
+ znormdat - Takes patterns file of (un-normalized) feature vectors,
+            and foreach coefficient position across the vectors,
+            computes the mean and stddev, writing these statistics
+            out to support ZNormalization.
+ znormpat - Takes A patterns file of (un-normalized) feature vectors,
+            and ZNormalizes its feature vectors based on global statistics
+            provided.
+ asc2bin - Reads a PCASYS ascii data file of any type and
+           writes a corresponding binary data file.
+ bin2asc - Reads a PCASYS binary data file of any type and
+           writes a corresponding ascii data file.
+ chgdesc - Given a PCASYS data file this command replaces its
+           description.  The program makes a temporary copy of
+           the file.
+ cmbmcs - Combines mean/covariance pairs.
+ datainfo - Dumps the "header" information for the PCASYS
+            data file.
+ eva_evt - Computes the eigen values and vectors of
+           a covariance matrix.
+ fixwts - M-weighted robust weight filter from network
+          activations.
+ kltran - Runs a Karhunen-Loeve transform on a set of vectors.
+ lintran - Runs a linear transform on a set of vectors.
+ meancov - Computes the mean vector and covariance matrix
+           for a set of feature vectors.
+ mkoas - Makes an orientation array for a set of fingerprint
+         images, writing them as a "matrix" file, with each oa
+         being one row of the matrix.
+ mktran - Makes a transform matrix Psi^t * W, where Psi's columns
+          are the first n_eigvecs_use eigenvectors from eigvecs_file
+          and W is the diagonal matrix of the weights from regwts_file.
+ mlp - Main routine for running the Multi-Layer Perceptron training
+       and testing program.
+ mlpfeats - Converts a feature/class file set from PCASYS to the MLP
+            feature file format.
+ oas2pics - Converts orientation arrays into gray/binary
+            (ie. 0|255) IHEAD raster images.
+ optosf - Optimizes the overall smoothing factor (osf) which the
+          Probabilistic Neural Net (PNN) classifier is to use.
+ optrws - Optimizes the regional weights that are then applied
+          to the eigen vectors.
+ optrwsgw - Optimizes the regional weights that are then applied
+            to the eigen vectors. Used to run optimization
+            on several processors at onetime.
+ pcasys - Main program of fingerprint classification system demo.
+          pcasysgy (graphic demo) and pcasysgn (non-graphic demo).
+ rwpics - Converts regional weight data to an image. Three modes
+          convert the regional weights, basepoints, or the
+          estimated gradients at the basepoints.
+ stackms - Combines input matrices into one file.

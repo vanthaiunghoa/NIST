@@ -1,0 +1,58 @@
+ read_byte - Reads a byte of data from an open file.
+
+ getc_byte - Reads a byte of data from a memory buffer.
+
+ getc_bytes - Reads a sequence of data bytes from a memory buffer.
+
+ write_byte - Writes a byte of data to an open file.
+
+ putc_byte - Writes a byte of data to a memory buffer.
+
+ putc_byte - Writes a sequence of data bytes to a memory buffer.
+
+ read_ushort - Reads an unsigned short from an open file.
+
+ getc_ushort - Reads an unsigned short from a memory buffer.
+
+ write_ushort - Writes an unsigned short to an open file.
+
+ putc_ushort - Writes an unsigned short to a memory buffer.
+
+ read_uint - Reads an unsigned integer from an open file.
+
+ getc_uint - Reads an unsigned integer from a memory buffer.
+
+ write_uint - Writes an unsigned integer to an open file.
+
+ putc_uint - Writes an unsigned integer to a memory buffer.
+
+ write_bits - Writes a sequence of bits to a memory buffer.
+
+ flush_bits - Writes remaining bits to a memory buffer.
+
+ read_ascii_file - Reads the contents of an ASCII text file
+              into a single null-terminated string.
+ file_exists - tests to see if the given pathname is an existing file.
+
+ filehead - takes a full pathname and returns the information to the
+            left of the rightmost directory level.
+ fileroot - takes a file name and strips off the rightmost extension,
+            if one is present.
+ filesize - opens the specified pathname and determines the size of
+            of the file in bytes.
+ filetail - takes a full pathname and returns the information to the
+            right of the rightmost directory level.
+ find_file - takes a directory path and a filename and determines if
+             the file exists.
+ newext - takes a filename, strips off the rightmost extenstion, and
+          appends a new extension.  This routine exits upon error.
+ newext_ret - takes a filename, strips off the rightmost extenstion, and
+          appends a new extension.  This routine returns an error code.
+ newextlong - takes a pointer to a filename, strips the rightmost
+		 extenstion, and appends an arbitrary new extension.
+ read_strstr_file - Routine opens a column-formatted text file
+                    parsing in the first column as a list of strings
+                    and the second column as a list of strings.
+ read_fltflt_file - Routine opens a column-formatted text file
+                    parsing in the first column as a list of floats
+                    and the second column as a list of floats.

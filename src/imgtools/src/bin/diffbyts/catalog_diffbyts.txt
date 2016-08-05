@@ -1,0 +1,2 @@
+ diff_bytes - Compares two input files byte by byte and returns
+              a histogram of the gray level differences.

@@ -1,0 +1,3 @@
+ ycc2rgb - Takes a raw YCbCr pixmap and converts its pixels components
+           to the RGB colorspace.  This program can handle the specific
+           downsampling of comonent planes.

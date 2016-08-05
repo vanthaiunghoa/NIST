@@ -1,0 +1,5 @@
+ not2intr - Takes an IHead or raw pixmap with non-interleaved color
+            components.  It interleaves the pixel color components
+            into a single 24-bit plane.  This can handle specific
+            downsamplings of component planes that are commonly used
+            with YCbCr colorspace images.

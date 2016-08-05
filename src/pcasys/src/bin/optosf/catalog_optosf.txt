@@ -1,0 +1,2 @@
+ optosf - Optimizes the overall smoothing factor (osf) which the
+          Probabilistic Neural Net (PNN) classifier is to use.

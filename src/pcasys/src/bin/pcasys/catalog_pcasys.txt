@@ -1,0 +1,2 @@
+ pcasys - Main program of fingerprint classification system demo.
+          pcasysgy (graphic demo) and pcasysgn (non-graphic demo).

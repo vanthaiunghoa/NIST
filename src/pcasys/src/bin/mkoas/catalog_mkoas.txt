@@ -1,0 +1,3 @@
+ mkoas - Makes an orientation array for a set of fingerprint
+         images, writing them as a "matrix" file, with each oa
+         being one row of the matrix.

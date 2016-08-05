@@ -1,0 +1,5 @@
+ an2k2txt - Parses an ANSI/NIST 2007 file and writes
+            its contents to new file in a textually viewable and
+            editable format.  Binary image fields are stored to
+            temporary files and externally referenced in the
+            output file.

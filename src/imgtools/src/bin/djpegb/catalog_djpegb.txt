@@ -1,0 +1,2 @@
+ djpegb - Takes a Baseline (Lossy) JPEG compressed image file and
+          decodes it to an IHead or raw image file.

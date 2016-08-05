@@ -1,0 +1,9 @@
+ sd_rfmt - Takes an IHead encapsulated image file from the NIST
+           archive of fingerprint and mugshot NIST Special Databases
+           {4,9,10,14,&18}.  The file is converted into a
+           "standardized" JPEGL or WSQ format.  Attribute data
+           stored in the input IHead header is reformatted and
+           stored in a comment block in the output file.
+           This program should be used to convert legacy data only.
+           The format of the files processed by this program should
+           be considered obsolete.

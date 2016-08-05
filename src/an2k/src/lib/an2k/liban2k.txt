@@ -1,0 +1,720 @@
+ alloc_ANSI_NIST - Allocates an empty initialized structure
+              designed to respresent and manipulate the contents
+              of an ANSI/NIST file.
+ new_ANSI_NIST_record - Allocates and initializes an empty record
+              structure.  Note - This routine sets the record type
+              in addition to calling alloc_ANSI_NIST_record.
+ alloc_ANSI_NIST_record - Allocates an empty initialized structure
+              designed to respresent and manipulate the contents
+              of an ANSI/NIST logical record.
+ new_ANSI_NIST_field - Allocates and initializes an empty field
+              structure.  Note - This routine sets the field ID
+              in addition to calling alloc_ANSI_NIST_field.
+ alloc_ANSI_NIST_field - Allocates an empty initialized structure
+              designed to respresent and manipulate the contents
+              of an ANSI/NIST field.
+ alloc_ANSI_NIST_subfield - Allocates an empty initialized structure
+              designed to respresent and manipulate the contents
+              of an ANSI/NIST subfield.
+ alloc_ANSI_NIST_item - Allocates an empty initialized structure
+              designed to respresent and manipulate the contents
+              of an ANSI/NIST information item.
+ free_ANSI_NIST - Deallocates an ANSI/NIST file structure and
+              all of its allocated substructures.
+ free_ANSI_NIST_record - Deallocates an ANSI/NIST logical record
+              structure and all of its allocated substructures.
+ free_ANSI_NIST_field - Deallocates an ANSI/NIST field
+              structure and all of its allocated substructures.
+ free_ANSI_NIST_subfield - Deallocates an ANSI/NIST subfield
+              structure and all of its allocated substructures.
+ free_ANSI_NIST_subfield_item - Deallocates an ANSI/NIST information
+              item structure and all of its allocated substructures.
+ append_ANSI_NIST_record - Takes a new field and adds it to the
+              end of the specified record, updating the size of
+              the record and setting any separator characters.
+ append_ANSI_NIST_field - Takes a new subfield and adds it to the
+              end of the specified field, updating the size of
+              the field and setting any separator characters.
+ append_ANSI_NIST_subfield - Takes a new item and adds it to the
+              end of the specified subfield, updating the size of
+              the subfield and setting any separator characters.
+ copy_ANSI_NIST - Takes an ANSI/NIST structure and creates a
+              memory copy of its contents.
+ copy_ANSI_NIST_record - Takes a logical record structure and creates a
+              memory copy of its contents.
+ copy_ANSI_NIST_field - Takes a field structure and creates a
+              memory copy of its contents.
+ copy_ANSI_NIST_subfield - Takes a subfield structure and creates a
+              memory copy of its contents.
+ copy_ANSI_NIST_item - Takes an information item and creates a
+              memory copy of its contents.
+   get_ANSI_NIST_date - Gets the formatted system date string and
+                converts and returns a new date string in CCYYMMDD
+                format.
+ png_mem_read_data - A callback function for libpng to use to
+              read a PNG image from a memory buffer instead of
+              from a file.  The required form and usage is
+              described in the PNG manual.
+ read_png_stream - Read a PNG image from a data stream that has
+              already been initialized to read from a file or a
+              memory buffer.
+ png_decode_mem - Read a PNG image from a memory buffer.
+ read_png_file - Read a PNG image from a file.
+   decode_ANSI_NIST_image() - Takes an ANSI/NIST image record and
+                decodes its image data (if necessary) and returns
+                the reconstructed pixmap and image attributes.
+   decode_binary_field_image() - Takes an ANSI/NIST binary field
+                image record and decodes its image data (if necessary)
+                and returns the reconstructed pixmap and its attributes.
+   decode_tagged_field_image() - Takes an ANSI/NIST tagged field
+                image record and decodes its image data (if necessary)
+                and returns the reconstructed pixmap and its attributes.
+ do_delete - Master routine used to carry out a requested structure
+              deletion and write the results to file.  The structure
+              to be deleted is represented by a 4-tuple of indices.
+ delete_ANSI_NIST_select - Routine used to carry out a requested
+              structure deletion based on a 4-tuple of structure
+              indices. These indices represent the physical order
+              of subsequent logical records, fields, subfields, and
+              information items in the ANSI/NIST file structure.
+              In order to specify the deletion of higher-level
+              structures, subordinate structures are assigned the
+              value of "UNDEFINED_INT".
+ delete_ANSI_NIST_record - Routine used to delete the specified
+              logical record from an ANSI/NIST file structure.
+              This routine also updates the CNT field of the Type-1
+              record to accurately reflect the deletion.
+ adjust_delrec_CNT_IDCs - Routine used to update an ANSI/NIST file
+              structure's Type-1 record, CNT 1.3 field, due to a
+              deleted logical record.  This routine also manages
+              the remaining records' IDC values in an attempt to
+              maintain contiguous IDCs.
+ delete_ANSI_NIST_field - Routine used to delete the specified
+              field from an ANSI/NIST file structure.
+ delete_ANSI_NIST_subfield - Routine used to delete the specified
+              subfield from an ANSI/NIST file structure.
+ delete_ANSI_NIST_item - Routine used to delete the specified
+              information item from an ANSI/NIST file structure.
+ flip_y_coord - Takes a y-coordinatenew in 0.01 mm units
+              and inverts it based on the height of the image.
+              The coordinate is encoded within a specified substring.
+ flip_direction - Takes a direction in degrees and flips it 180
+              degrees.  The direction is encoded within a specified
+              substring.
+ read_ANSI_NIST_file - Routine reads the contents of the specified
+              ANSI/NIST filename into memory.
+ read_ANSI_NIST - Routine reads the contents from an open file pointer
+              into an ANSI/NIST file structure in memory.
+ scan_ANSI_NIST - Routine reads the contents from an wrapped memory
+              buffer into an ANSI/NIST file structure in memory.
+ read_Type1_record - Routine reads the contents of a Type-1 record
+              from an open file pointer into memory.
+ scan_Type1_record - Routine reads the contents of a Type-1 record
+              from a wrapped buffer into memory.
+ read_ANSI_NIST_remaining_records - Routine reads the contents of
+              the logical records following the Type-1 record from
+              an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_remaining_records - Routine reads the contents of
+              the logical records following the Type-1 record from
+              a wrapped buffer.
+ read_ANSI_NIST_record - Routine reads the contents of a logical
+              record from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_record - Routine reads the contents of a logical
+              record from a wrapped buffer.
+ read_ANSI_NIST_tagged_record - Routine reads the contents of a logical
+              tagged record from an open ANSI/NIST file pointer.
+              A tagged record is a record containing tagged fields.
+ scan_ANSI_NIST_tagged_record - Routine reads the contents of a logical
+              tagged record from a wrapped buffer.
+              A tagged record is a record containing tagged fields.
+ read_ANSI_NIST_record_length - Routine reads the integer contents of
+              a record's tagged LEN field from an open ANSI/NIST
+              file pointer.
+ scan_ANSI_NIST_record_length - Routine reads the integer contents of
+              a record's tagged LEN field from a wrapped buffer.
+ read_ANSI_NIST_version - Routine reads the integer contents of
+              a record's tagged VER field from an open ANSI/NIST
+              file pointer.
+ scan_ANSI_NIST_version - Routine reads the integer contents of
+              a record's tagged VER field from a wrapped buffer.
+ read_ANSI_NIST_integer_field - Routine reads the integer contents of
+              a tagged field from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_integer_field - Routine reads the integer contents of
+              a tagged field from a wrapped buffer.
+ read_ANSI_NIST_remaining_fields - Routine reads the remaining tagged
+               fields from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_remaining_fields - Routine reads the remaining tagged
+               fields from a wrapped buffer.
+ read_ANSI_NIST_field - Routine reads the contents of a tagged
+               field from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_field - Routine reads the contents of a tagged
+               field from a wrapped buffer.
+ read_ANSI_NIST_image_field - Routine reads the binary image data
+               stored in a tagged image field from an open ANSI/NIST
+               file pointer.
+ scan_ANSI_NIST_image_field - Routine reads the binary image data
+               stored in a tagged image field from a wrapped buffer.
+ read_ANSI_NIST_tagged_field - Routine reads the ASCII data
+               stored in a tagged field from an open ANSI/NIST
+               file pointer.
+ scan_ANSI_NIST_tagged_field - Routine reads the ASCII data
+               stored in a tagged field from a wrapped buffer.
+ read_ANSI_NIST_field_ID - Routine reads the tag for a tagged field
+               from an open ANSI/NIST file pointer.  A tag is
+               comprised of the "<record type>.<field ID>
+               routine parses and the record type separate from
+               the field ID.
+ scan_ANSI_NIST_field_ID - Routine reads the tag for a tagged field
+               from a wrapped buffer.
+ parse_ANSI_NIST_field_ID - Routine parses the tag for a tagged field
+               from a character buffer allegedly filled with bytes
+               from read from an ANSI/NIST file.  A tag is
+               comprised of the "<record type>.<field ID>
+               routine parses and the record type separate from
+               the field ID.  If the expected field ID is not found
+               during the parse, this routine returns "unsuccessful".
+ read_ANSI_NIST_subfield - Routine reads the contents of a subfield
+               from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_subfield - Routine reads the contents of a subfield
+               from a wrapped buffer.
+ read_ANSI_NIST_item - Routine reads the contents of an information
+               item from an open ANSI/NIST file pointer.
+ scan_ANSI_NIST_item - Routine reads the contents of an information
+               item from a wrapped buffer.
+ read_ANSI_NIST_binary_image_record - Routine reads the contents
+               of a binary image record (Type-3,4,5,6) from an
+               open ANSI/NIST file pointer.
+ scan_ANSI_NIST_binary_image_record - Routine reads the contents
+               of a binary image record (Type-3,4,5,6) from a
+ read_ANSI_NIST_binary_signature_record - Routine reads the contents
+               of a binary signature record (Type-8) from an open
+               ANSI/NIST file pointer.
+ scan_ANSI_NIST_binary_signature_record - Routine reads the contents
+               of a binary signature record from a wrapped buffer.
+ read_ANSI_NIST_binary_field - Routine reads the contents of a
+               binary record's field from an open ANSI/NIST file
+               pointer.  These binary fields do not have tags and
+               are in a fixed format in terms of size and order
+               within the record.
+ scan_ANSI_NIST_binary_field - Routine reads the contents of a
+               binary record's field from a wrapped buffer.
+ write_ANSI_NIST_file - Routine writes the contents of an 
+               ANSI/NIST file structure to a specified file.
+ write_ANSI_NIST - Routine writes the contents of an ANSI/NIST file
+               structure to an open file pointer.
+ write_ANSI_NIST_record - Routine writes the contents of a logical
+               record structure to an open file pointer.
+ write_ANSI_NIST_tagged_field - Routine writes the contents of a
+               tagged field structure to an open file pointer.
+ write_ANSI_NIST_tagged_subfield - Routine writes the contents of a
+               tagged field's subfield structure to an open file pointer.
+ write_ANSI_NIST_tagged_item - Routine writes the contents of a
+               tagged field's information item to an open file pointer.
+ write_ANSI_NIST_separator - Routine writes a specified separator
+               character to an open file pointer.  The FS (0x1C)
+               terminates every record, GS (0x1D) separates fields,
+               RS (0x1E) separates subfields, and US (0x1F)
+ write_ANSI_NIST_binary_field - Routine writes the contents of a
+               binary field to an open file pointer.
+ write_ANSI_NIST_binary_subfield - Routine writes the contents of a
+               binary record's subfield to an open file pointer.
+ write_ANSI_NIST_binary_item - Routine writes the contents of a
+               binary record's information item to an open file pointer.
+ read_fmttext_file - Routine reads into memory the contents of the
+              specified textually formatted version of an ANSI/NIST file.
+ read_fmttext - Routine reads into memory the contents from an
+              open file pointer of a textually formatted version
+              of an ANSI/NIST file.
+ read_fmttext_item - Routine reads into memory an entry (or line of
+              text) from an open file pointer of a textually formatted
+              version of an ANSI/NIST file.  Each line read is an
+              information item according to the standard, and returned
+              with the item is it's record, field, subfield, and
+              information item indices, which can be analyzed to
+              determine if a new record, field, or subfield has begun.
+ write_fmttext_file - Routine writes an ANSI/NIST file structure
+              to the specified filename in a textually formatted
+              representation that can be viewed and edited.
+ write_fmttext - Routine writes an ANSI/NIST file structure
+              in a textually formatted representation that can be
+              viewed and edited to an open file pointer.
+ write_fmttext_record - Routine writes the contents of a logical
+              record to the open file pointer in a textually formatted
+              representation that can be viewed and edited.
+ write_fmttext_field - Routine writes the contents of a field
+              to the open file pointer in a textually formatted
+              representation that can be viewed and edited.
+ write_fmttext_image_field - Routine writes the contents of a binary
+              image field to a temporary file and generates an external
+              file reference to be written to the  open file pointer
+              in the textually formatted representation.  This way
+              the textually formatted file contains the reference to
+              the temporary file containing the binary image data.
+ write_fmttext_subfield - Routine writes the contents of subfield
+              structure to the  open file pointer in a textually
+              formatted representation that can be viewed and edited.
+ write_fmttext_item - Routine writes the contents of an information
+              item to the  open file pointer in a textually
+              formatted representation that can be viewed and edited.
+   get_first_grayprint - Takes and ANSI/NIST structure and locates and
+                         returns the first grayscale image record found.
+ do_insert - Master routine used to carry out a requested structure
+              insertion and write the results to file.  The structure
+              to be inserted is represented by a 4-tuple of indices.
+ insert_ANSI_NIST_select - Routine used to carry out a requested
+              structure insertion based on a 4-tuple of structure
+              indices. These indices represent the physical order
+              of subsequent logical records, fields, subfields, and
+              information items in the ANSI/NIST file structure.
+              In order to specify the insertion of higher-level
+              structures, subordinate structures are assigned the
+              value of "UNDEFINED_INT".  When higher-level structures
+              are specified, "newvalue" takes on a filename which
+              contains the data to be inserted.
+ insert_ANSI_NIST_record - Routine used to insert the logical record
+              contained in a specified file into an ANSI/NIST file
+              structure.  This routine also updates the CNT field of
+              the Type-1 record to accurately reflect the insertion.
+              Note - This routine used different IDC assignment scheme
+              form insert_ANSI_NIST_record_frmem.  In this routine, an
+              IDC is assigned based on the record's position in the
+              ANSI/NIST structure.
+ insert_ANSI_NIST_record_frmem - Routine used to insert the logical
+              record from memory into an ANSI/NIST file
+              structure.  This routine also updates the CNT field of
+              the Type-1 record to accurately reflect the insertion.
+              Note - This routine used different IDC assignment scheme
+              form insert_ANSI_NIST_record.  In this routine, the
+              IDC in the record to be inserted is used directly to
+              update the Type-1 CNT field.
+ insert_ANSI_NIST_record_core - This routine incorporates the
+              core functionality of the two preceeding routines
+              used to insert a logical record into an ANSI/NIST
+              file structure.  This routine also calls the next
+              routine in order to update the CNT field of the
+              Type-1 record to accurately reflect the insertion.
+              Note - This routine selects one of two different IDC
+              assignment schemes, keep the IDC in the record, or
+              assign a new IDC based on the record's new location
+              in the file structure.
+ adjust_insrec_CNT_IDCs - Routine used to update an ANSI/NIST
+              file structure's Type-1 record, CNT 1.3 field, due
+              to a logical record's insertion.  This routine also
+              manages the preexisting records' IDC values in an
+              attempt to maintain contiguous IDCs.  This routine
+              assumes the new record has already been inserted.
+              The existing IDC in the inserted record can be
+              retained, or a new IDC can be assigned, depending
+              on the value of the new_idc argument.  All the
+              appropriate adjustments are made to the IDC values
+              in the Type-1 record and in the other corresponding
+              records.
+ insert_ANSI_NIST_field - Routine used to insert the field
+              contained in a specified file into an ANSI/NIST
+              file structure.
+ insert_ANSI_NIST_field_frmem - Routine used to insert a field
+              contained in memory into an ANSI/NIST file
+              structure.
+ insert_ANSI_NIST_field_core - Routine that implements the core
+              functionality of the preceeding two functions,
+              which insert a field into an ANSI/NIST file
+              structure.
+ insert_ANSI_NIST_subfield - Routine used to insert the subfield
+              contained in a specified file into an ANSI/NIST file
+              structure.
+ insert_ANSI_NIST_subfield_frmem - Routine used to insert the
+              subfield contained in memory into an ANSI/NIST file
+              structure.
+ insert_ANSI_NIST_subfield_core - Routine used to insert the subfield
+              contained in a specified file into an ANSI/NIST file
+              structure.
+ insert_ANSI_NIST_item - Routine used to insert the specified
+              informaton item value into an ANSI/NIST file structure.
+   is_ANSI_NIST_file - Takes an input file, opens it, and scans the
+                       start of the file for field id ("1.001
+                       If field id found, then assumed AN2K format.
+   is_ANSI_NIST - Takes a byte stream, and scans the start of
+                  stream for field id ("1.001
+                  If field id found, then assumed AN2K format.
+ lookup_ANSI_NIST_field - Routine takes a field ID and searches
+              the given record structure in order to locate the
+              matching field.
+ lookup_ANSI_NIST_subfield - Routine takes a subfield index and tests
+              if the subfield structure exists in the given field.
+ lookup_ANSI_NIST_item - Routine takes an information item index and
+              tests if the item structure exists in the given subfield.
+ lookup_ANSI_NIST_image - Routine takes an starting record index
+              into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of an image record
+              (Type-3,4,5,6,10,13,14,15,&16).  When found, it
+              returns the record structure.
+ lookup_ANSI_NIST_image_ppmm - Routine takes an ANSI/NIST file
+              structure and derives the scan resolution in units of
+              pixels/mm for the specified image record.
+ lookup_binary_field_image_ppmm - Routine takes an ANSI/NIST file
+              structure and derives the scan resolution in units of
+              pixels/mm for the specified binary field image record.
+ lookup_tagged_field_image_ppmm - Routine takes a tagged field
+              image record and derives the scan resolution of the
+              image in units of pixels/mm.
+ lookup_ANSI_NIST_fingerprint - Routine takes an starting record index
+              into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of a fingerprint image record
+              (Type-3,4,5,6,13,&14).  When found, it returns the
+              record structure.
+ lookup_ANSI_NIST_grayprint - Routine takes an starting record index
+              into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of an 8-bit grayscale fingerprint
+              image record (Type-4,13,&14).  When found, it returns
+              the record structure.
+ lookup_binary_field_fingerprint - Routine takes a starting record 
+              index into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of a binary field fingerprint
+              image record (Type-3,4,5,6).  When found, it returns
+              the record structure.
+ lookup_tagged_field_fingerprint - Routine takes a starting record 
+              index into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of a tagged field fingerprint
+              image record (Type-13&14).  When found, it returns
+              the record structure.
+ lookup_fingerprint_with_IDC - Routine takes an starting record index
+              into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of a fingerprint image record
+              with specified IDC value.  (Type-3,4,5,6,13,&14).
+              When found, it returns the record structure.
+ lookup_FGP_field - Examines the record type in order to
+              determine whether it contains a FGP (Finger
+              Position) or PMP (Palmprint Position) field, and
+              where that field is located.
+ int lookup_IMP_field - Routine examines the record type in order
+              to determine whether it contains an IMP (Impression
+              Type) field.
+ lookup_minutiae_format - Routine takes a pointer to a record and
+              finds the minutia format, if it exists.
+ lookup_ANSI_NIST_record - Routine takes an starting record index
+              into an ANSI/NIST structure and proceeds to search
+              for the next occurrence of a record that satisfies
+              the selection function.  When found, it returns the
+              record structure.
+ do_print - Master routine used to print the requested logical record,
+              field, subfield, or information item to either the
+              specified file or to standard output.  The structure
+              to be printed is represented by a 4-tuple of indices.
+ print_ANSI_NIST_select - Routine used to print in a textual format
+              the contents of a requested structure based on a 4-tuple
+              of structure indices. These indices represent the physical
+              order of subsequent logical records, fields, subfields, and
+              information items in the ANSI/NIST file structure.
+              In order to specify the printing of higher-level
+              structures, subordinate structures are assigned the value
+              of "UNDEFINED_INT".
+ fbgetc - Reads a single character from a file pointer, or a
+          AN2KBDB-wrapped pointer, and return that character.
+          This function can be a replacement for fgetc(2).
+ fbread - Reads items of a given size from an open file pointer, or
+          AN2KBDB-wrapped pointer, and return count of elements read.
+          This function can be a replacement for fread(2).
+ fbtell - Returns the current file position, or buffer position.
+          This function can be used as a replacement for ftell(3).
+ read_binary_item_data - Reads a binary unsigned int, unsigned short,
+              or unsigned char from the open file pointer and returns
+              the value read converted into an ASCII string.
+ scan_binary_item_data - Reads a binary unsigned int, unsigned short,
+              or unsigned char from the wrapped buffer and returns
+              the value read converted into an ASCII string.
+ read_binary_uint - Reads a binary unsigned integer from the open
+              file pointer and swaps the bytes if architecture is
+              not Big Endian.
+ scan_binary_uint - Reads a binary unsigned integer from the wrapped
+              buffer and swaps the bytes if architecture is
+              not Big Endian.
+ read_binary_ushort - Reads a binary unsigned short from the open
+              file pointer and swaps the bytes if architecture is
+              not Big Endian.
+ scan_binary_ushort - Reads a binary unsigned short from the wrapped
+              buffer and swaps the bytes if architecture is
+              not Big Endian.
+ read_binary_uchar - Reads a binary unsigned character from the open
+              file pointer.
+ scan_binary_uchar - Reads a binary unsigned character from the wrapped
+              buffer.
+ read_binary_image_data - Reads a raw raster image from the specified
+              filename.
+ read_char - Reads a single specified byte from the open file pointer.
+              An error code is returned if the next byte read does
+              not match the desired character.
+ read_string - Reads a sequence of characters up to a specified
+              delimiter and returns the characters concatenated
+              together in NULL-terminiated character string.  The
+              delimiter is NOT stored in the string.
+ read_integer - Reads a sequence of characters up to a specified
+              delimiter and converts those character into an
+              integer which is returned.  The delimiter is NOT
+              part of the integer value.
+ skip_white_space - Reads a contiguous sequence of white space characters
+              (spaces, tabs, and new lines) up to the next non-white
+              space character is read from the open file pointer.
+              Upon reading a non-white space character, the reading
+              is terminated and the last character read is put back
+              into the input stream.
+   lookup_type14_segments - Examines Type-14 record for any FINGER 
+              SEGMENT POSITION and if found stores it in a SEG array.
+ get_type_params_by_name - Takes a string representation
+               of a possible record selection parameter type name
+               and returns the corresponding record selection
+               type, if it exists.
+ get_type_params_by_name - Takes a string representation
+               of a possible record selection parameter type name
+               and returns the corresponding record selection
+               type, if it exists.
+ select_ANSI_NIST_record - Takes an ANSI/NIST record and a set of
+               selection criteria and determines whether the
+               record matches the criteria.
+ new_rec_sel - Allocates then fills a record selector structure
+              designed to be combined with other similar
+              structures to represent the criteria for selecting
+              records from ANSI/NIST files.
+ alloc_rec_sel - Allocates an empty initialized structure
+              designed to be combined with other similar
+              structures to represent the criteria for selecting
+              records from ANSI/NIST files.
+ free_rec_sel - Deallocate a record selection criteria structure
+              and all the nested allocated structures.  Ignore
+              NULL pointers.
+ add_rec_sel_num - Create a record selection criteria structure
+              of the specified type and numeric value, and add it to
+              another record selection criteria structure, which
+              has been created separately and assigned a logical
+              operation to apply in combining the results of
+              a record against the nested criteria structures.
+ add_rec_sel_str - Create a record selection criteria structure
+              of the specified type and string value, and add it to
+              another record selection criteria structure, which
+              has been created separately and assigned a logical
+              operation to apply in combining the results of
+              a record against the nested criteria structures.
+ add_rec_sel - Add specified record selection criteria
+              structure to another record selection criteria
+              structure, which has been created separately and
+              assigned a logical operation to apply in combining
+              the results of checking a record against the nested
+              criteria structures.
+ validate_rec_sel_num_value - Check the given integer value
+              against the restrictions in the given type
+              parameters, and indicate whether the value is
+              valid for this type.
+ rec_sel_usage - Print information about how to specify record
+              selectors of a particular type
+ parse_rec_sel_option - Parse a command line option specifying
+              record selection criteria, such as FGP or IMP.
+              Values may be specified as integers from tables in
+              the standard, lists or ranges of such integers, or
+              strings that map to one or more integer values.
+              Returns a record selector of type 'or' containing
+              all the specified values.
+ simplify_rec_sel - Simplify a set of record selectors,
+              eliminating unnecessary or redundant elements, like
+              an 'rs_and' or 'rs_or' with one or no arguments,
+              combining nested 'rs_and's, etc.
+ write_rec_sel - Write a set of record selectors to an open I/O
+              stream in a human readable format that can be
+              examined, modified, and read back in with
+              read_rec_sel.
+ write_rec_sel_file - Write a set of record selectors to the
+              named file in a human readable format that can be
+              examined, modified, and read back in with
+              read_rec_sel_file.
+ read_rec_sel - Read a set or record selectors from an open file
+              I/O stream into a set of record selector
+              structures.
+ read_rec_sel_file - Read a set or record selectors from a file
+              into a set of record selector structures.
+ imp_is_live_scan - Indicates whether an impression of a given type
+              is a live scan.
+ imp_is_latent - Indicates whether an impression of a given type
+              is a latent print.
+ imp_is_rolled - Indicates whether an impression of a given type
+              is a rolled print.
+ imp_is_flat - Indicates whether an impression of a given type
+              is a flat print.
+ binary_image_field_bytes - Takes an integer field ID associated
+              with a specific field in a binary image record
+              (Type-3,4,5,6) and returns the number of bytes used
+              to represent that field.
+ binary_signature_field_bytes - Takes an integer field ID associated
+              with a specific field in a signature record (Type-8)
+              and returns the number of bytes used to represent
+              that field.
+ do_substitute - Master routine used to carry out a requested structure
+              substitution and write the results to file.  The structure
+              to be substituted is represented by a 4-tuple of indices.
+ substitute_ANSI_NIST_select - Routine used to carry out a requested
+              structure substitution based on a 4-tuple of structure
+              indices. These indices represent the physical order
+              of subsequent logical records, fields, subfields, and
+              information items in the ANSI/NIST file structure.
+              In order to specify the substitution of higher-level
+              structures, subordinate structures are assigned the
+              value of "UNDEFINED_INT".  When higher-level structures
+              are specified, "newvalue" takes on a filename which
+              contains the data to be substituted.
+ substitute_ANSI_NIST_record - Routine used to substitute the logical
+              record contained in a specified file into an ANSI/NIST
+              file structure.  This routine also updates the CNT field
+              of the Type-1 record to accurately reflect the substitution.
+ substitute_ANSI_NIST_field - Routine used to substitute the field
+              contained in a specified file into an ANSI/NIST file
+              structure.
+ substitute_ANSI_NIST_subfield - Routine used to substitute the subfield
+              contained in a specified file into an ANSI/NIST file
+              structure.
+ substitute_ANSI_NIST_item - Routine used to substitute the specified
+              informaton item value into an ANSI/NIST file structure.
+ nist2iafis_fingerprints - Searches an ANSI/NIST file structure for
+              tagged field fingerprint records, and if possible,
+              converts them to binary field image records.  For
+              example, a 500 dpi 8-bit grayscale Type-14 record
+              will be converted to a Type-4 record.
+ nist2iafis_fingerprint - Takes an ANSI/NIST tagged field image
+              fingerprint record, and if possible, converts it to
+              a binary field image record.  For example, a 500 dpi
+              8-bit grayscale Type-14 record will be converted to
+              a Type-4 record.
+ nist2iafis_type_9s - Searches an ANSI/NIST file structure for
+              Type-9 records with NIST fields populated and converts
+              the fields, populating FBI/IAFIS Type-9 fields. 
+ nist2iafis_needed - Determines if the specified Type-9 record
+              contains populated FBI/IAFIS fields.  If not, the
+              routine returns TRUE, otherwise it returns FALSE.
+ nist2iafis_type_9 - Takes a Type-9 record with NIST fields populated
+              and converts the fields, populating FBI/IAFIS fields
+              in the record.
+ nist2iafis_method - Takes an ANSI/NIST system method string
+              and returns an FBI/IAFIS method following an
+              "imperfect" mapping.
+ nist2iafis_minutia_type - Takes an ANSI/NIST Table 7 minutia type
+              and returns an FBI/IAFIS minutia type.
+ nist2iafis_pattern_class - Takes an ANSI/NIST Table 8 pattern
+              classification and a finger position (if known) and
+              if possible returns an FBI/IAFIS pattern classification.
+ nist2iafis_ridgecount - Takes a NIST formatted neighbor/ridge count
+              string containing the neighbor index and ridge count
+              separated by a comma, and generates an FBI/IAFIS
+              formatted string that is fixed length with 3 characters
+              containing the neighbor index immediately followed by
+              2 characters containing the ridge count.
+ iafis2nist_fingerprints - Searches an ANSI/NIST file structure for
+              binary field fingerprint records and converts them
+              to tagged field image records.  For example, a 500 dpi
+              8-bit grayscale tenprint Type-4 record will be converted
+              to a Type-14 record.
+ iafis2nist_fingerprint - Takes an ANSI/NIST binary field image
+              fingerprint record, and converts it to a tagged
+              field image record.  For example, a 500 dpi 8-bit
+              grayscale tenprint Type-4 record will be converted
+              to a Type-14 record.
+ iafis2nist_type_9s - Searches an ANSI/NIST file structure for
+              Type-9 records with FBI/IAFIS fields populated and
+               converts the fields, populating NIST Type-9 fields. 
+ iafis2nist_needed - Determines if the specified Type-9 record
+              contains populated NIST fields.  If not, the
+              routine returns TRUE, otherwise it returns FALSE.
+ iafis2nist_type_9 - Takes a Type-9 record with FBI/IAFIS fields
+              populated and converts the fields, populating NIST fields
+              in the record.
+ iafis2nist_method - Takes an FBI/IAFIS system method string
+              and returns an ANSI/NIST method.
+ iafis2nist_minutia_type - Takes an FBI/IAFIS minutia type
+              and returns an ANSI/NIST minutia type from Table 7.
+ iafis2nist_pattern_class - Takes an FBI/IAFIS pattern classification
+              and a finger position (if known) and if possible returns
+              an ANSI/NIST Table 8 pattern classification.
+ iafis2nist_ridgecount - Takes an FBI/IAFIS formatted neighbor/ridge
+              count fixed-length string containing a concatenated
+              neighbor index and ridge count, and generates an ANSI/NIST
+              formatted string with the index and count separated
+              by a comma.
+ tagged_record - Determines if the specified record type is one that
+              is formatted with tagged fields.
+ binary_record - Determines if the specified record type is one that
+              is formatted with binary fields.
+ tagged_image_record - Determines if the specified record type is one
+              that is formatted with tagged fields and contains an image.
+ binary_image_record - Determines if the specified record type is one
+              that is formatted with binary fields and contains an image.
+ image_record - Determines if the specified record type is one
+              that contains an image.
+ binary_signature_record - Determines if the specified record type is one
+              that is binary formatted and contains signature data.
+ image_field - Determines if the given field structure contains
+              an image.
+ is_delimiter - Determines if the specified character is one of
+              the special delimiters defined in the ANSI/NIST standard.
+ which_hand - Takes a finger position from Table 6 of the ANSI/NIST
+              standard and determines which hand the specified finger
+              is on.  The position may be "unknown".
+   fingerprint2tagged_field_image - Takes a fingerprint image pixmap
+                (possibly compressed) and converts it into a Type-13
+                or Type-14 tagged field image record determined by
+                the impression type passed.
+   image2type_13 - Takes a fingerprint image pixmap (possibly
+               compressed) and converts it into a Type-13 tagged
+               field image record.
+   image2type_14 - Takes a fingerprint image pixmap (possibly
+               compressed) and converts it into a Type-14 tagged
+               field image record.
+ update_ANSI_NIST - Takes a new logical record structure and
+              appends it to the end of the specified ANSI/NIST
+              file structure.  This routine does nothing to
+              update the CNT field of the Type-1 record or to
+              manage IDCs.  It primarily supports the input
+              parsing of an ANSI/NIST file.
+ update_ANSI_NIST_record - Takes a new field structure and
+              appends it to the end of the specified logical record
+              structure.  This routine primarily supports the input
+              parsing of an ANSI/NIST file.
+ update_ANSI_NIST_field - Takes a new subfield structure and
+              appends it to the end of the specified field
+              structure.  This routine primarily supports the input
+              parsing of an ANSI/NIST file.
+ update_ANSI_NIST_subfield - Takes a new information item and
+              appends it to the end of the specified subfield
+              structure.  This routine primarily supports the input
+              parsing of an ANSI/NIST file.
+ update_ANSI_NIST_item - Takes a newly read character and
+              appends it to the end of the specified information
+              item's string value.  This routine primarily supports
+              the input parsing of an ANSI/NIST file.
+ update_ANSI_NIST_record_LENs - Takes an ANSI/NIST file structure
+              and record by record recomputes and updates the
+              length/size of each record.
+ update_ANSI_NIST_record_LEN - Takes a specified logical record in
+              an ANSI/NIST file structure and recomputes and updates
+              the length/size of the record and parent ANSI/NIST
+              structure.
+ update_ANSI_NIST_binary_record_LEN - Takes a specified binary field
+              record and recomputes and updates the length/size of
+              the record.
+ update_ANSI_NIST_tagged_record_LEN - Takes a specified tagged field
+              record and recomputes and updates the length/size of
+              the record.
+ update_ANSI_NIST_field_ID - Takes a field structure and assigns it a 
+              new record type and field identifier and udpates the
+              field ID string if it has been previously allocated
+              and assigned.
+ increment_numeric_item - Takes a specified information item and
+              replaces its value with its increment.  The length
+              of the item's record is updated appropriately.  This
+              routines assumes all structure indices are value.
+ decrement_numeric_item - Takes a specified information item and
+              replaces its value with its decrement.  The length
+              of the item's record is updated appropriately.  This
+              routines assumes all structure indices are value.
+ value2field - Takes a string value encapsulating it into an
+              information item and then embedding the item into a
+              newly allocated and initialized field structure.
+ value2subfield - Takes a string value encapsulating it into an
+              information item and then embedding the item into a
+              newly allocated subfield structure.
+ value2item - Takes a string value encapsulating it into a
+              newly allocated information item.

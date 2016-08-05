@@ -1,0 +1,97 @@
+ bres_line_alloc - generates the intervening discrete points along a
+                   line spanning (pnt1 to pnt2) two specified endpoints.
+ bubble_sort_int - sorts a list of integers into decreasing order with a
+                   bubble sort. It is destructive to the integer list
+                   passed to it.
+ read_skip_marker_segment - skips the segment data following a
+           JPEGB, JPEGL, or WSQ marker in the open filestream.
+ getc_skip_marker_segment - skips the segment data following a
+           JPEGB, JPEGL, or WSQ marker in the given memory buffer.
+ fatalerr - generic application error handler that prints a specified
+            message to stderr and exits with a status of 1.
+ inv_bytes - takes an array of bytes and inverts them using a
+             lookup table. invert = reverse bits within a byte
+ malloc_char_ret - allocates (malloc) a char of specified size n
+                   returns on error.
+ malloc_uchar_ret - allocates (malloc) an unsigned char of specified size n
+                    returns on error.
+ malloc_int_ret - allocates (malloc) an int of specified size n
+                  returns on error.
+ calloc_int_ret - allocates (calloc) an int of specified size n
+                  returns on error.
+ realloc_int_ret - reallocates an int to new size n. returns on error.
+
+ datadup - mallocs new space and copies supplied data into it, see also
+           ../image/imageops.c imagedup
+ malloc_char - allocates (malloc) a char of specified size n
+
+ malloc_uchar - allocates (malloc) an unsigned char of specified size n
+
+ malloc_shrt - allocates (malloc) a short of specified size n
+
+ malloc_int - allocates (malloc) an int of specified size n
+
+ malloc_flt - allocates (malloc) a float of specified size n
+
+ calloc_char - allocates (calloc) a char of specified size n
+
+ calloc_uchar - allocates (calloc) an unsigned char of specified size n
+
+ malloc_shrt - allocates (calloc) a short of specified size n
+
+ calloc_int - allocates (calloc) an int of specified size n
+
+ calloc_flt - allocates (calloc) a float of specified size n
+
+ malloc_dbl_char_l1 - allocates (malloc) a set of char pointers of
+                      specified number n
+ malloc_dbl_uchar_l1 - allocates (malloc) a set of unsigned char pointers
+                       of specified number n
+ malloc_dbl_shrt_l1 - allocates (malloc) a set of short pointers of
+                     specified number n
+ malloc_dbl_int_l1 - allocates (malloc) a set of int pointers of specified
+                     number n
+ malloc_dbl_flt_l1 - allocates (malloc) a set of float pointers of
+                     specified number n
+ realloc_char - reallocates a char to new size n
+
+ realloc_uchar - reallocates an unsigned char to new size n
+
+ realloc_shrt - reallocates a short to new size n
+
+ realloc_int - reallocates an int to new size n
+
+ realloc_flt - reallocates an float to new size n
+
+ realloc_dbl_int_l1 - reallocates a set of int pointers to new number n
+
+ realloc_dbl_char_l1 - reallocates a set of char pointers to a
+                        new number n
+ realloc_dbl_uchar_l1 - reallocates a set of unsigned char pointers
+                        to new number n
+ realloc_dbl_flt_l1 - reallocates a set of float pointers to new number n
+
+ free_dbl_char - free a double char pointer
+
+ free_dbl_uchar - free a double uchar pointer
+
+ free_dbl_flt - free a double float pointer
+
+ malloc_dbl_char - allocates (malloc) a set of char pointers
+                   of specified number n
+ malloc_dbl_flt - allocates (malloc) a set of float pointers
+                  of specified number n
+ ssx_stddev - computes standard deviation based on sum of samples
+              and sum of the square of samples
+ ssx_variance - comptues variance based on sum of samples
+              and sum of the square of samples
+ ssx - fundamental computation to support variance and stddev
+
+ syserr - exits on error with a status of -1, printing to stderr a
+          caller-defined message.
+ ticks - returns the number of clock cycles (ticks) used by a process.
+
+ ticksPerSec - returns the system definition for HZ, where 1/HZ seconds
+               is a tick (HZ = 60).
+ current_time - returns a string containing the current date on the
+                system.

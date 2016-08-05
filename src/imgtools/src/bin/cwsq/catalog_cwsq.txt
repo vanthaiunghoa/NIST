@@ -1,0 +1,4 @@
+ cwsq - Takes an IHead or raw image pixmap and encodes it using WSQ.
+        This is an implementation based on the Crinimal Justice
+        Information Services (CJIS) document "WSQ Gray-scale
+        Fingerprint Compression Specification", Dec. 1997.

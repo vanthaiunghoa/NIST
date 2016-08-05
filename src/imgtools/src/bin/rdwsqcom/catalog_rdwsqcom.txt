@@ -1,0 +1,2 @@
+ rdwsqcom - Takes a WSQ compressed image file and prints all
+            comments in the file to standard output.

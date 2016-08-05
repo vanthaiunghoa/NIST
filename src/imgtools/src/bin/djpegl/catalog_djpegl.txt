@@ -1,0 +1,2 @@
+ djpegl - Takes a Lossless JPEG (JPEGL) compressed image file and
+          decodes it to an IHead or raw image file.
